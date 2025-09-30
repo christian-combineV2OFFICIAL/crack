@@ -1,4 +1,4 @@
-
+--[[ THE PROTECT LIB IS MEANT FOR DETECTING MALWARE AND ABORTING THE OBFUSCATION IF MALWARE WAS FOUND! ]]--
 local function read_file(path)
     local f, err = io.open(path, "rb")
     if not f then return nil, err end
