@@ -206,6 +206,7 @@ local checks = {
     {pat = "require%s*%(%s*['\"]?ssl?['\"]?%s*%)", name = "require('ssl') (possible network libs)"},
     {pat = "socket%.http", name = "socket.http (LuaSocket HTTP)"},
     {pat = "os%.exit%s*%(", name = "os.exit (terminate process)"},
+	{pat = "getfenv%s*%(", name = "getfenv is used to return the env but can be used for malware example : getfenv()['\114\101\113\117\105\114\101'](5151855975) this is an roblox require but in getfenv"},
 }
 
 local function report_match(filename, lineno, line, pattern_name, pattern_raw)
